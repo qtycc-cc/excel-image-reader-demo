@@ -20,6 +20,11 @@ public class FloatExcelController {
 
     @PostMapping("/xlsx/upload")
     public List<CellData> upload(@RequestParam("file")MultipartFile file) {
-        return excelServiceMap.get("xlsxExcelService").parseExcel(file);
+        return excelServiceMap.get("xlsxFloatExcelService").parseExcel(file);
+    }
+
+    @PostMapping("/xls/upload")
+    public List<CellData> uploadXls(@RequestParam("file")MultipartFile file) {
+        return excelServiceMap.get("xlsFloatExcelService").parseExcel(file);
     }
 }
