@@ -1,8 +1,5 @@
 package com.example.demo.service;
 
-import org.springframework.stereotype.Service;
-
-@Service
 public interface OssService {
-    String upload();
+    String upload(byte[] data, String fileFullName);
 }
