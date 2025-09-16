@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 @Slf4j
-public abstract class AbstractFloatExcelService implements FloatExcelService {
+public abstract class AbstractExcelService implements ExcelService {
     @Override
     public List<CellData> parseExcel(MultipartFile file) {
         List<CellData> result = new ArrayList<>();
@@ -57,6 +57,8 @@ public abstract class AbstractFloatExcelService implements FloatExcelService {
      */
     protected abstract Map<String, List<PictureInfo>> buildFloatPictureMap(Workbook workbook);
 
+//    protected abstract Map<String, List<PictureInfo>> buildEmbeddedPictureMap(Workbook workbook);
+
     private CellData processRow(Row row, int rowIndex, Map<String, List<PictureInfo>> pictureMap) {
         CellData.CellDataBuilder builder = CellData.builder();
         builder.rowIndex(rowIndex);
@@ -76,7 +78,6 @@ public abstract class AbstractFloatExcelService implements FloatExcelService {
         for (PictureInfo pic : pictures) {
             // 模拟保存图片并生成URL
             String url = "http://example.com/images/" + System.currentTimeMillis() + "." + pic.getExtension();
-            log.info("保存图片: {}，生成URL: {}", pic, url);
             urls.add(url);
         }
         return urls;

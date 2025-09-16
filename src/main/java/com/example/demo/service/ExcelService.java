@@ -5,6 +5,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
-public interface FloatExcelService {
+public interface ExcelService {
     List<CellData> parseExcel(MultipartFile file);
 }

@@ -1,7 +1,8 @@
 package com.example.demo.service.impl;
 
+import com.example.demo.constant.ExcelConstants;
 import com.example.demo.entity.PictureInfo;
-import com.example.demo.service.AbstractFloatExcelService;
+import com.example.demo.service.AbstractExcelService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFClientAnchor;
@@ -19,8 +20,8 @@ import java.util.List;
 import java.util.Map;
 
 @Slf4j
-@Service("xlsxFloatExcelService")
-public class XlsxFloatExcelServiceImpl extends AbstractFloatExcelService {
+@Service(value = ExcelConstants.XLSX_SERVICE_BEAN_NAME)
+public class XlsxExcelServiceImpl extends AbstractExcelService {
 
     @Override
     protected Map<String, List<PictureInfo>> buildFloatPictureMap(Workbook workbook) {
