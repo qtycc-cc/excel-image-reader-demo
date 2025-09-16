@@ -9,5 +9,5 @@ import java.util.List;
 
 @Service
 public interface ExcelService {
-    public List<List<CellData>> parseExcel(MultipartFile file);
+    List<List<CellData>> parseExcel(MultipartFile file);
 }
